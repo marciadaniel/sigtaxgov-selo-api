@@ -49,7 +49,10 @@ API disponível em:
 ```
 http://localhost:8080/api/v1/selos/{codigo}
 ```
-
+Podes testar a API usando esta coleção do Postman:
+```
+[https://www.postman.com/navigation-physicist-86609621/workspace/public/collection/26062719-9cd132d9-2ea7-41a9-b55d-09ce50828ffb?action=share&creator=26062719](https://www.postman.com/navigation-physicist-86609621/workspace/public/collection/26062719-9cd132d9-2ea7-41a9-b55d-09ce50828ffb?action=share&creator=26062719)
+```
 **Endpoints**
 
 - `GET GET /api/v1/selos?status=VALIDO` que retorna os dados de um selo fiscal com base no tipo de status.
@@ -79,3 +82,9 @@ http://localhost:8080/api/v1/selos/{codigo}
     "status": "EXPIRADO"
 }
 ```
+
+Falta implementar:
+
+* **Documentação da API com Swagger/OpenAPI.**
+* **Cobertura de testes com JUnit + Mockito.**
+* **Mapeamento de status com cor indicativa** (ex: para uso futuro no frontend).
