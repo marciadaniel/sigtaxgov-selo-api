@@ -1,5 +1,7 @@
 package marcia.daniel.sigtaxgov_selo_api.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -20,12 +22,14 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "Selo")
 public class SeloController {
 
     private final SeloService seloService;
     private final RedisService redisService;
 
     @GetMapping("/api/v1/selos")
+    @Operation(summary = "Buscar selo por código", description = "Retorna um selo específico pelo código único.")
     public ResponseEntity<List<SeloResponseDto>> getAll(@RequestParam(required = false) Status status){
 
         List<SeloResponseDto> selos;
@@ -40,6 +44,7 @@ public class SeloController {
     }
 
     @GetMapping("/api/v1/selos/{codigo}")
+    @Operation(summary = "Buscar selo por código", description = "Retorna um selo específico pelo código único.")
     public ResponseEntity<SeloResponseDto> getByCodigo(@PathVariable @NotNull @NotBlank String codigo){
 
         var seloOptional = seloService.getByCodigo(codigo);
@@ -55,6 +60,7 @@ public class SeloController {
     }
 
     @GetMapping("/api/v1/selos/recentes")
+    @Operation(summary = "Listar selos recentes", description = "Retorna os últimos selos consultados, armazenados no Redis.")
     public ResponseEntity<List<SeloResponseDto>> getSelosRecentes(){
         List<Selo> selos = redisService.getSelosRecentes();
 
@@ -64,6 +70,7 @@ public class SeloController {
     }
 
     @PostMapping("/api/v1/selos")
+    @Operation(summary = "Criar novo selo", description = "Salva um novo selo com os dados fornecidos.")
     public ResponseEntity<SeloResponseDto>
     save(@RequestBody @Valid SeloRequestDto seloRequestDto) {
 

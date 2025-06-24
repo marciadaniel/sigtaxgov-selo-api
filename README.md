@@ -8,9 +8,11 @@ Este projeto é uma API REST que permite validar um selo fiscal com base em seu 
 - **Spring Boot 3.5**
 - **Spring Data JPA**
 - **Spring Validation**
+- **JUnit  + Mockito**
 - **Gradle**
 - **PostgreSQL Database**
 - **Spring Data Redis (Access+Driver)**
+
 
 **⚙️ Como Executar**
 
