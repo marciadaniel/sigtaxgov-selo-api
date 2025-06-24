@@ -64,4 +64,5 @@ public class SeloService {
         return String.format("%s-%d-%04d", "SEL", ano, proximaSequencia);
     }
 
+
 }
