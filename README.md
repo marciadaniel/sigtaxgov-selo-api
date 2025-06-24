@@ -82,9 +82,3 @@ Podes testar a API usando esta coleção do Postman:
     "status": "EXPIRADO"
 }
 ```
-
-Falta implementar:
-
-* **Documentação da API com Swagger/OpenAPI.**
-* **Cobertura de testes com JUnit + Mockito.**
-* **Mapeamento de status com cor indicativa** (ex: para uso futuro no frontend).
